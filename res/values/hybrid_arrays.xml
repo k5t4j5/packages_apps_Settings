@@ -16,19 +16,19 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
-
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!--Quick unlock -->
-    <string name="unlock_quick_unlock_control_title">Quick unlock</string>
-    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+    <!-- Advanced reboot menu dev options -->
+    <string-array name="advanced_reboot_entries">
+        <item>@string/advanced_reboot_disabled</item>
+        <item>@string/advanced_reboot_hide_on_keyguard</item>
+        <item>@string/advanced_reboot_show_always</item>
+    </string-array>
 
-    <!-- Advanced reboot options -->
-    <string name="advanced_reboot_title">Advanced reboot</string>
-    <string name="advanced_reboot_summary">Include options in the power menu for rebooting into recovery and bootloader</string>
-    <string name="advanced_reboot_dialog_title">Advanced reboot menu</string>
-    <string name="advanced_reboot_disabled">Disable</string>
-    <string name="advanced_reboot_hide_on_keyguard">Hide on lock screen</string>
-    <string name="advanced_reboot_show_always">Show always</string>
+    <string-array name="advanced_reboot_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 
 </resources>

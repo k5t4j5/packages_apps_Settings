@@ -85,6 +85,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String KEY_ADVANCED_SECURITY = "advanced_security";
     private static final String KEY_MANAGE_TRUST_AGENTS = "manage_trust_agents";
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
+    private static final String KEY_ADVANCED_REBOOT = "advanced_reboot";
 
     private static final int SET_OR_CHANGE_LOCK_METHOD_REQUEST = 123;
     private static final int CONFIRM_EXISTING_FOR_BIOMETRIC_WEAK_IMPROVE_REQUEST = 124;
@@ -132,6 +133,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private DialogInterface mWarnInstallApps;
     private SwitchPreference mPowerButtonInstantlyLocks;
     private SwitchPreference mQuickUnlockScreen;
+    private ListPreference mAdvancedReboot;
 
     private boolean mIsPrimary;
 
@@ -388,12 +390,23 @@ public class SecuritySettings extends SettingsPreferenceFragment
             mToggleAppInstallation.setEnabled(false);
         }
 
+<<<<<<< HEAD
         // AppOps summary, only visible when strict mode is enabled.
         if (!AppOpsManager.isStrictEnable()) {
             Preference appOpsSummary = findPreference(KEY_APP_OPS_SUMMARY);
             if (deviceAdminCategory != null) {
                 deviceAdminCategory.removePreference(appOpsSummary);
             }
+=======
+        mAdvancedReboot = (ListPreference) root.findPreference(KEY_ADVANCED_REBOOT);
+        if (mIsPrimary) {
+            mAdvancedReboot.setValue(String.valueOf(Settings.Secure.getInt(
+                    getContentResolver(), Settings.Secure.ADVANCED_REBOOT, 0)));
+            mAdvancedReboot.setSummary(mAdvancedReboot.getEntry());
+            mAdvancedReboot.setOnPreferenceChangeListener(this);
+        } else {
+            deviceAdminCategory.removePreference(mAdvancedReboot);
+>>>>>>> 96be2f2... Add reboot menu [2/2]
         }
 
         // Advanced Security features
@@ -405,6 +418,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
                 manageAgents.setEnabled(false);
                 manageAgents.setSummary(R.string.disabled_because_no_backup_security);
             }
+
         }
 
         // The above preferences come and go based on security state, so we need to update
@@ -714,6 +728,11 @@ public class SecuritySettings extends SettingsPreferenceFragment
             Settings.Secure.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.Secure.LOCKSCREEN_QUICK_UNLOCK_CONTROL,
                     (Boolean) value ? 1 : 0);
+        } else if (preference == mAdvancedReboot) {
+            Settings.Secure.putInt(getContentResolver(), Settings.Secure.ADVANCED_REBOOT,
+                    Integer.valueOf((String) value));
+            mAdvancedReboot.setValue(String.valueOf(value));
+            mAdvancedReboot.setSummary(mAdvancedReboot.getEntry());
         }
         return result;
     }
