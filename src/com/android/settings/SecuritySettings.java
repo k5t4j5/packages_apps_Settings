@@ -390,14 +390,14 @@ public class SecuritySettings extends SettingsPreferenceFragment
             mToggleAppInstallation.setEnabled(false);
         }
 
-<<<<<<< HEAD
         // AppOps summary, only visible when strict mode is enabled.
         if (!AppOpsManager.isStrictEnable()) {
             Preference appOpsSummary = findPreference(KEY_APP_OPS_SUMMARY);
             if (deviceAdminCategory != null) {
                 deviceAdminCategory.removePreference(appOpsSummary);
             }
-=======
+        }
+
         mAdvancedReboot = (ListPreference) root.findPreference(KEY_ADVANCED_REBOOT);
         if (mIsPrimary) {
             mAdvancedReboot.setValue(String.valueOf(Settings.Secure.getInt(
@@ -406,7 +406,6 @@ public class SecuritySettings extends SettingsPreferenceFragment
             mAdvancedReboot.setOnPreferenceChangeListener(this);
         } else {
             deviceAdminCategory.removePreference(mAdvancedReboot);
->>>>>>> 96be2f2... Add reboot menu [2/2]
         }
 
         // Advanced Security features
@@ -418,7 +417,6 @@ public class SecuritySettings extends SettingsPreferenceFragment
                 manageAgents.setEnabled(false);
                 manageAgents.setSummary(R.string.disabled_because_no_backup_security);
             }
-
         }
 
         // The above preferences come and go based on security state, so we need to update
