@@ -42,18 +42,23 @@
     <string name="wifi_channel">Channel</string>
     <string name="wifi_mhz">MHz</string>
 
-    <string name="none_is_silent_title">None is Silent mode</string>
-    <string name="none_is_silent_summary">Silent mode always sounds alarms</string>
-
     <!-- Bluetooth settings.  A checkbox to set if we should accept all the file types regardless of their presence in MIME type whitelist -->
     <string name="bluetooth_accept_all_files">Accept all file types</string>
-
-    <!-- Linked / unlinked notification volume -->
-    <string name="allow_lights_title">Allow notification lights</string>
 
     <string name="wifi_calling_settings_title">Wifi Calling Settings</string>
 
     <!-- Whether to display IME switcher notifcation -->
     <string name="ime_switcher_notify">Selector notification</string>
     <string name="ime_switcher_notify_summary">Display input method selector notification</string>
+
+    <!-- Notification Lights -->    
+    <string name="allow_lights_title">Allow notification lights</string>
+
+    <!-- Silent mode -->    
+    <string name="none_is_silent_title">None is Silent mode</string>
+    <string name="none_is_silent_summary">Silent mode always sounds alarms</string>
+
+    <!-- Linked / unlinked notification volume -->
+    <string name="link_volume_option_title">Link ring and notification volumes</string>
+    <string name="notification_volume_option_title">Notification volume</string>
 </resources>
