@@ -61,4 +61,5 @@
     <!-- Linked / unlinked notification volume -->
     <string name="allow_lights_title">Allow notification lights</string>
 
+    <string name="wifi_calling_settings_title">Wifi Calling Settings</string>
 </resources>
