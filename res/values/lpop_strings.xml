@@ -45,4 +45,17 @@
     <string name="none_is_silent_title">None is Silent mode</string>
     <string name="none_is_silent_summary">Silent mode always sounds alarms</string>
 
+    <!-- Lights settings screen, notification light settings -->
+    <string name="notification_light_title">Notification light</string>
+    <string name="notification_light_general_title">General</string>
+    <string name="notification_light_applist_title">Apps</string>
+    <string name="notification_light_phonelist_title">Phone</string>
+    <string name="notification_light_use_custom">Use custom values</string>
+    <string name="notification_light_default_value">Default</string>
+    <string name="notification_light_missed_call_title">Missed call</string>
+    <string name="notification_light_voicemail_title">Voicemail</string>
+
+    <!-- Linked / unlinked notification volume -->
+    <string name="allow_lights_title">Allow notification lights</string>
+
 </resources>
