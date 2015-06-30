@@ -71,7 +71,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String PROPERTY_URL_SAFETYLEGAL = "ro.url.safetylegal";
     private static final String PROPERTY_SELINUX_STATUS = "ro.build.selinux";
     private static final String KEY_KERNEL_VERSION = "kernel_version";
-    private static final String KEY_BUILD_DATE = "build_date";
+    private static final String KEY_BUILD_NUMBER = "build_number";
     private static final String KEY_DEVICE_MODEL = "device_model";
     private static final String KEY_DEVICE_PROCESSOR = "device_processor";
     private static final String KEY_SELINUX_STATUS = "selinux_status";
@@ -102,10 +102,9 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         setStringSummary(KEY_DEVICE_PROCESSOR, getDeviceProcessorInfo());
         setValueSummary(KEY_EQUIPMENT_ID, PROPERTY_EQUIPMENT_ID);
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL);
-        setValueSummary(KEY_BUILD_DATE, "ro.build.date");
-        setStringSummary(KEY_KERNEL_VERSION, getFormattedKernelVersion());
-        findPreference(KEY_KERNEL_VERSION).setEnabled(true);
-        setValueSummary(KEY_MOD_VERSION, "ro.mod.version");
+        setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
+        findPreference(KEY_BUILD_NUMBER).setEnabled(true);
+        findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
 
         if (!SELinux.isSELinuxEnabled()) {
             String status = getResources().getString(R.string.selinux_status_disabled);
