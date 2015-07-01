@@ -83,7 +83,6 @@
             </intent>
         </dashboard-tile>
 
-    </dashboard-category>
 
     <!-- DEVICE -->
     <dashboard-category
