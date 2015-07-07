@@ -34,4 +34,11 @@
     <!-- Default Alarm tone -->
     <string name="alarm_ringtone_title">Default alarm ringtone</string>
 
+    <!-- Values for screen color  -->
+    <string-array name="screen_color_setting">
+        <item>Standard</item>
+        <item>Vivid</item>
+        <item>Custom</item>
+    </string-array>
+
 </resources>

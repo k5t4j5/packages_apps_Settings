@@ -39,6 +39,14 @@
         android:title="@string/allow_lights_title"
         android:defaultValue="true" />
 
+    <SwitchPreference
+            android:key="zen_heads_up_toggle"
+            android:title="@string/zen_heads_up_toggle_title"
+            android:summary="@string/zen_heads_up_toggle_summary"
+            android:persistent="false"
+            android:switchTextOff=""
+            android:switchTextOn="" />
+
     <PreferenceCategory
         android:key="important"
         android:title="@string/zen_mode_important_category" >
